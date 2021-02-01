@@ -1,0 +1,15 @@
+version: "3"
+volumes:
+  postfix:
+services:
+  postfix:
+    container_name: postfix
+    image: juanluisbaptiste/postfix:latest
+    environment:
+      - SMTP_SERVER
+      - SMTP_USERNAME
+      - SMTP_PASSWORD
+      - SERVER_HOSTNAME
+    ports:
+      - 587:587
+      - 25:25
